@@ -1,5 +1,5 @@
 //
-//  UICollectionView+Shimme.swift
+//  UICollectionView+Shimmer.swift
 //  ShimmerView
 //
 //  Created by Drouin on 23/07/2019.
@@ -21,7 +21,7 @@ extension UICollectionView {
             self._collectionViewShimmer = newValue
         }
     }
-    
+
     private var _collectionViewShimmer: CollectionViewShimmer? {
         get {
             if let shimmer = objc_getAssociatedObject(self, &_collectionViewShimmerAssociateObjectValue) as? CollectionViewShimmer {
@@ -36,9 +36,10 @@ extension UICollectionView {
                                             newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
         }
     }
-    
+
     func startShimmerAnimation(withIdentifier: String, numberOfRows: Int? = 2, numberOfSections: Int? = 2) {
         self.isScrollEnabled = false
+        collectionViewShimmer?.shimmerStarted = true
         collectionViewShimmer?.numberOfRows = numberOfRows ?? 2
         collectionViewShimmer?.numberOfSections = numberOfSections ?? 2
         collectionViewShimmer?.identifierCell = withIdentifier
@@ -50,13 +51,14 @@ extension UICollectionView {
         self.reloadData()
     }
     
-    override func stopShimmerAnimation() {
+    override func stopShimmerAnimation(animated: Bool = true) {
         collectionViewShimmer?.shimmerStarted = false
+        collectionViewShimmer?.animated = animated
         self.reloadData()
         
         // add timer for reset all shimmer cell before reloadData
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
-            
+        let deadline = animated ? (DispatchTime.now() + 0.3) : DispatchTime.now()
+        DispatchQueue.main.asyncAfter(deadline: deadline, execute: {
             self.isScrollEnabled = true
             self.dataSource = self.collectionViewShimmer?.dataSourceBeforeShimmer
             self.delegate = self.collectionViewShimmer?.delegateBeforeShimmer
@@ -74,6 +76,7 @@ internal class CollectionViewShimmer: NSObject {
     var delegateBeforeShimmer: UICollectionViewDelegate?
     var dataSourceBeforeShimmer: UICollectionViewDataSource?
     var shimmerStarted = true
+    var animated = true
     
     override init() { }
 }
@@ -88,11 +91,15 @@ extension CollectionViewShimmer: CollectionViewShimmerDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withIdentifier: identifierCell, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifierCell, for: indexPath)
+        
+        if shimmerStarted {
+            cell.stopShimmerAnimation()
+            cell.startShimmerAnimation()
+        } else {
+            cell.stopShimmerAnimation(animated: animated)
+        }
         
         return cell
     }
-    
-    
-    
 }

@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E90E817A22E6EACB00ADE56E /* UITableView+Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90E817922E6EACB00ADE56E /* UITableView+Shimmer.swift */; };
+		E90E817C22E6EC4E00ADE56E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90E817B22E6EC4E00ADE56E /* TableViewController.swift */; };
+		E90E818022E748E700ADE56E /* UICollectionView+Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90E817F22E748E700ADE56E /* UICollectionView+Shimmer.swift */; };
+		E90E818222E74A7300ADE56E /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90E818122E74A7300ADE56E /* CollectionViewController.swift */; };
 		E93C969122C0F1F600050814 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93C969022C0F1F600050814 /* AppDelegate.swift */; };
 		E93C969322C0F1F600050814 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93C969222C0F1F600050814 /* ViewController.swift */; };
 		E93C969622C0F1F600050814 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E93C969422C0F1F600050814 /* Main.storyboard */; };
 		E93C969822C0F1FB00050814 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E93C969722C0F1FB00050814 /* Assets.xcassets */; };
 		E93C969B22C0F1FB00050814 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E93C969922C0F1FB00050814 /* LaunchScreen.storyboard */; };
+		E93C96A422C0F2CB00050814 /* UIView+Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93C96A322C0F2CB00050814 /* UIView+Shimmer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E90E817922E6EACB00ADE56E /* UITableView+Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Shimmer.swift"; sourceTree = "<group>"; };
+		E90E817B22E6EC4E00ADE56E /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		E90E817F22E748E700ADE56E /* UICollectionView+Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Shimmer.swift"; sourceTree = "<group>"; };
+		E90E818122E74A7300ADE56E /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		E93C968D22C0F1F500050814 /* ShimmerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShimmerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E93C969022C0F1F600050814 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E93C969222C0F1F600050814 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +31,7 @@
 		E93C969722C0F1FB00050814 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E93C969A22C0F1FB00050814 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E93C969C22C0F1FB00050814 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E93C96A322C0F2CB00050814 /* UIView+Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmer.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +64,25 @@
 		E93C968F22C0F1F600050814 /* ShimmerView */ = {
 			isa = PBXGroup;
 			children = (
+				E93C96A222C0F2B200050814 /* ShimmerView */,
 				E93C969022C0F1F600050814 /* AppDelegate.swift */,
 				E93C969222C0F1F600050814 /* ViewController.swift */,
+				E90E817B22E6EC4E00ADE56E /* TableViewController.swift */,
+				E90E818122E74A7300ADE56E /* CollectionViewController.swift */,
 				E93C969422C0F1F600050814 /* Main.storyboard */,
 				E93C969722C0F1FB00050814 /* Assets.xcassets */,
 				E93C969922C0F1FB00050814 /* LaunchScreen.storyboard */,
 				E93C969C22C0F1FB00050814 /* Info.plist */,
+			);
+			path = ShimmerView;
+			sourceTree = "<group>";
+		};
+		E93C96A222C0F2B200050814 /* ShimmerView */ = {
+			isa = PBXGroup;
+			children = (
+				E93C96A322C0F2CB00050814 /* UIView+Shimmer.swift */,
+				E90E817922E6EACB00ADE56E /* UITableView+Shimmer.swift */,
+				E90E817F22E748E700ADE56E /* UICollectionView+Shimmer.swift */,
 			);
 			path = ShimmerView;
 			sourceTree = "<group>";
@@ -136,7 +159,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E93C969322C0F1F600050814 /* ViewController.swift in Sources */,
+				E90E817A22E6EACB00ADE56E /* UITableView+Shimmer.swift in Sources */,
 				E93C969122C0F1F600050814 /* AppDelegate.swift in Sources */,
+				E90E818022E748E700ADE56E /* UICollectionView+Shimmer.swift in Sources */,
+				E90E818222E74A7300ADE56E /* CollectionViewController.swift in Sources */,
+				E90E817C22E6EC4E00ADE56E /* TableViewController.swift in Sources */,
+				E93C96A422C0F2CB00050814 /* UIView+Shimmer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
