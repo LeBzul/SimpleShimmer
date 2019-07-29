@@ -45,6 +45,16 @@ myCollectionView.stopShimmerAnimation()
 
 ### Configure Shimmer 
 
+Change Animation : 
+```Swift
+ShimmerOptions.instance.animationType = .classic
+```
+| .classic  | .fade |
+| ------------- | ------------- |
+| ![Img](https://github.com/LeBzul/SimpleShimmer/blob/master/example_images/classic_shimmer.gif)
+  | ![Img](https://github.com/LeBzul/SimpleShimmer/blob/master/example_images/classic_shimmer.gif)
+  |
+
 
 # License
 SimpleShimmer is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
