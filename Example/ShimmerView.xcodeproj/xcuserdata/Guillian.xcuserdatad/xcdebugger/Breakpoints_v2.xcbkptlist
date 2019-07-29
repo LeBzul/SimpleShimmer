@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ShimmerView/ShimmerView/UITableView+Shimmer.swift"
-            timestampString = "585584841.952871"
+            filePath = "ShimmerView/ShimmerView/UIView+Shimmer.swift"
+            timestampString = "586095350.781015"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "stopShimmerAnimation(animated:)"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "findShimmerAndActive(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

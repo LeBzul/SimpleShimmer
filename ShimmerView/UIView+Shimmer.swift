@@ -14,28 +14,29 @@ extension UIView {
     private static let shimmer_tag = 9194
     
     @IBInspectable var withShimmer: Bool {
-        get {
-            return _withShimmer
-        }
-        set {
-            self._withShimmer = newValue
-        }
+        get { return _withShimmer }
+        set { self._withShimmer = newValue }
     }
 
     private var _withShimmer: Bool {
-        get {
-            return objc_getAssociatedObject(self, &_withShimmerAssociateObjectValue) as? Bool ?? false
-        }
-        set {
-            return objc_setAssociatedObject(self, &_withShimmerAssociateObjectValue,
-                                            newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
-        }
+        get { return objc_getAssociatedObject(self, &_withShimmerAssociateObjectValue) as? Bool ?? false }
+        set { return objc_setAssociatedObject(self, &_withShimmerAssociateObjectValue,
+                                            newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN) }
     }
-    
+
     @objc func startShimmerAnimation() {
         findShimmerAndActive(self)
     }
 
+    private func findShimmerAndActive(_ view: UIView) {
+        if view.withShimmer {
+            addShimmerView(view)
+        }
+        for subView in view.subviews {
+            findShimmerAndActive(subView)
+        }
+    }
+    /*
     private func findShimmerAndActive(_ view: UIView) {
         if !view.withShimmer {
             for subView in view.subviews {
@@ -48,44 +49,33 @@ extension UIView {
         } else {
             addShimmerView(view)
         }
-    }
+    }*/
 
     /*
      * Add shimmer view and start gradient animation
      */
     private func addShimmerView(_ view: UIView) {
-        let rect = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
-        let shimmerView = UIView.init(frame: rect)
-        shimmerView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.6)
-        shimmerView.layer.cornerRadius = view.layer.cornerRadius
+        let rectShimmer = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        let shimmerView = UIView.init(frame: rectShimmer)
+        shimmerView.backgroundColor = ShimmerOptions.instance.gradientColor.withAlphaComponent(0.6)
         shimmerView.tag = UIView.shimmer_tag
-        shimmerView.clipsToBounds = true
-        
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.white.cgColor, UIColor.clear.cgColor]
-        gradientLayer.startPoint = CGPoint(x: 0.8, y: 1.0)
-        gradientLayer.endPoint = CGPoint(x: 0.0, y: 0.8)
-        gradientLayer.frame = shimmerView.bounds
-        shimmerView.layer.mask = gradientLayer
-        
-        let animation = CABasicAnimation(keyPath: "transform.translation.x")
-        animation.duration = 1.2
-        animation.fromValue = -shimmerView.frame.size.width
-        animation.toValue = shimmerView.frame.size.width
-        animation.repeatCount = .infinity
-        
-        gradientLayer.add(animation, forKey: "animationShimmerView")
-        
-        let shimmerViewBackground = UIView.init(frame: rect)
+        ShimmerAnimation.buildAnimation(view: shimmerView, type: ShimmerOptions.instance.animationType)
+
+        let rectBackground = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        let shimmerViewBackground = UIView.init(frame: rectBackground)
         shimmerViewBackground.layer.cornerRadius = view.layer.cornerRadius
-        shimmerViewBackground.backgroundColor = UIColor.white
+        shimmerViewBackground.backgroundColor = ShimmerOptions.instance.backgroundColor
         shimmerViewBackground.tag = UIView.shimmer_tag
+        shimmerViewBackground.layer.borderWidth = ShimmerOptions.instance.borderWidth
+        shimmerViewBackground.layer.borderColor = ShimmerOptions.instance.borderColor.cgColor
+        shimmerViewBackground.layer.masksToBounds = true
         
         view.addSubview(shimmerViewBackground)
-        view.addSubview(shimmerView)
-        
-        shimmerViewBackground.bringSubviewToFront(view)
-        shimmerView.bringSubviewToFront(view)
+        shimmerViewBackground.addSubview(shimmerView)
+        if let superView = view.superview {
+            shimmerViewBackground.bringSubviewToFront(superView)
+            superView.bringSubviewToFront(view)
+        }
     }
 
     @objc func stopShimmerAnimation(animated: Bool = true) {
@@ -115,13 +105,10 @@ extension UIView {
 }
 
 extension UIViewController {
-
     func startShimmerAnimation() {
         view.startShimmerAnimation()
     }
-
     func stopShimmerAnimation(animated: Bool = true) {
         view.stopShimmerAnimation(animated: animated)
     }
-
 }

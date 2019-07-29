@@ -11,6 +11,8 @@
 		E90E817C22E6EC4E00ADE56E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90E817B22E6EC4E00ADE56E /* TableViewController.swift */; };
 		E90E818022E748E700ADE56E /* UICollectionView+Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90E817F22E748E700ADE56E /* UICollectionView+Shimmer.swift */; };
 		E90E818222E74A7300ADE56E /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90E818122E74A7300ADE56E /* CollectionViewController.swift */; };
+		E90E818422EAEE2900ADE56E /* ShimmerOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90E818322EAEE2900ADE56E /* ShimmerOptions.swift */; };
+		E90E818A22EEE12500ADE56E /* ShimmerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90E818922EEE12500ADE56E /* ShimmerAnimation.swift */; };
 		E93C969122C0F1F600050814 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93C969022C0F1F600050814 /* AppDelegate.swift */; };
 		E93C969322C0F1F600050814 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93C969222C0F1F600050814 /* ViewController.swift */; };
 		E93C969622C0F1F600050814 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E93C969422C0F1F600050814 /* Main.storyboard */; };
@@ -24,6 +26,8 @@
 		E90E817B22E6EC4E00ADE56E /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		E90E817F22E748E700ADE56E /* UICollectionView+Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Shimmer.swift"; sourceTree = "<group>"; };
 		E90E818122E74A7300ADE56E /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		E90E818322EAEE2900ADE56E /* ShimmerOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerOptions.swift; sourceTree = "<group>"; };
+		E90E818922EEE12500ADE56E /* ShimmerAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerAnimation.swift; sourceTree = "<group>"; };
 		E93C968D22C0F1F500050814 /* ShimmerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShimmerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E93C969022C0F1F600050814 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E93C969222C0F1F600050814 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 				E93C96A322C0F2CB00050814 /* UIView+Shimmer.swift */,
 				E90E817922E6EACB00ADE56E /* UITableView+Shimmer.swift */,
 				E90E817F22E748E700ADE56E /* UICollectionView+Shimmer.swift */,
+				E90E818322EAEE2900ADE56E /* ShimmerOptions.swift */,
+				E90E818922EEE12500ADE56E /* ShimmerAnimation.swift */,
 			);
 			path = ShimmerView;
 			sourceTree = "<group>";
@@ -164,7 +170,9 @@
 				E90E818022E748E700ADE56E /* UICollectionView+Shimmer.swift in Sources */,
 				E90E818222E74A7300ADE56E /* CollectionViewController.swift in Sources */,
 				E90E817C22E6EC4E00ADE56E /* TableViewController.swift in Sources */,
+				E90E818A22EEE12500ADE56E /* ShimmerAnimation.swift in Sources */,
 				E93C96A422C0F2CB00050814 /* UIView+Shimmer.swift in Sources */,
+				E90E818422EAEE2900ADE56E /* ShimmerOptions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

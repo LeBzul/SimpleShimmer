@@ -12,6 +12,10 @@ class TableViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     var shimmer = TableViewShimmer()
     
+    
+    var numberOfRowsInSection = 0
+    var numberOfSections = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -20,14 +24,16 @@ class TableViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-         self.tableView.startShimmerAnimation(withIdentifier: "shimmerCell", numberOfRows: 25, numberOfSections: 1)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0, execute: {
-            self.tableView.stopShimmerAnimation(animated: false)
+        self.tableView.startShimmerAnimation(withIdentifier: "shimmerCell", numberOfRows: 2, numberOfSections: 5)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
+            self.numberOfRowsInSection = 2
+            self.numberOfSections = 3
+            self.tableView.stopShimmerAnimation(animated: true)
         })
     }
 }
@@ -35,15 +41,18 @@ class TableViewController: UIViewController {
 extension TableViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return numberOfRowsInSection
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return numberOfSections
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "shimmerCell", for: indexPath)
+        cell.setNeedsLayout()
+        cell.setNeedsDisplay()
+        
         return cell
     }
 

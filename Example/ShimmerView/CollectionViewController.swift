@@ -24,8 +24,8 @@ class CollectionViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0, execute: {
-            self.collectionView.stopShimmerAnimation(animated: false)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+            self.collectionView.stopShimmerAnimation(animated: true)
         })
     }
 }

@@ -61,22 +61,27 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rzU-gf-Eb9">
                                 <rect key="frame" x="20" y="272" width="374" height="179.5"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bLR-GT-p4z">
-                                        <rect key="frame" x="20" y="40" width="100" height="100"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img" translatesAutoresizingMaskIntoConstraints="NO" id="Fgp-wx-hRP">
+                                        <rect key="frame" x="19" y="40" width="100" height="100"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="33J-AF-iBj"/>
-                                            <constraint firstAttribute="height" constant="100" id="XO6-OF-ItN"/>
+                                            <constraint firstAttribute="width" constant="100" id="Eej-Rw-0Qe"/>
+                                            <constraint firstAttribute="height" constant="100" id="U6U-KA-69i"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="withShimmer" value="YES"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="50"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="withShimmer" value="YES"/>
                                         </userDefinedRuntimeAttributes>
-                                    </view>
+                                    </imageView>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bNu-L0-IhI">
+                                        <rect key="frame" x="128" y="94.5" width="51" height="31"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="withShimmer" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEo-9H-Xwh">
-                                        <rect key="frame" x="128" y="49" width="238" height="21"/>
+                                        <rect key="frame" x="127" y="54" width="239" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -84,25 +89,19 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="withShimmer" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bNu-L0-IhI">
-                                        <rect key="frame" x="128" y="95" width="51" height="31"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="withShimmer" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </switch>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.1019607843" green="0.63529411759999999" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="bLR-GT-p4z" firstAttribute="centerY" secondItem="rzU-gf-Eb9" secondAttribute="centerY" id="BoQ-qN-mGq"/>
-                                    <constraint firstItem="bNu-L0-IhI" firstAttribute="top" secondItem="EEo-9H-Xwh" secondAttribute="bottom" constant="25" id="Kfy-FC-N2e"/>
-                                    <constraint firstItem="EEo-9H-Xwh" firstAttribute="leading" secondItem="bLR-GT-p4z" secondAttribute="trailing" constant="8" id="Lqc-fa-ghK"/>
-                                    <constraint firstAttribute="trailing" secondItem="EEo-9H-Xwh" secondAttribute="trailing" constant="8" id="QzI-vL-sx8"/>
-                                    <constraint firstItem="bNu-L0-IhI" firstAttribute="leading" secondItem="bLR-GT-p4z" secondAttribute="trailing" constant="8" id="kbu-6w-PD6"/>
-                                    <constraint firstItem="bLR-GT-p4z" firstAttribute="leading" secondItem="rzU-gf-Eb9" secondAttribute="leading" constant="20" id="wyg-Y3-vUg"/>
-                                    <constraint firstItem="bLR-GT-p4z" firstAttribute="top" secondItem="EEo-9H-Xwh" secondAttribute="bottom" constant="-30" id="x9f-kd-Y61"/>
+                                    <constraint firstAttribute="bottom" secondItem="bNu-L0-IhI" secondAttribute="bottom" constant="54" id="BvO-Ja-ZfU"/>
+                                    <constraint firstItem="EEo-9H-Xwh" firstAttribute="top" secondItem="rzU-gf-Eb9" secondAttribute="top" constant="54" id="JUi-Er-KfK"/>
+                                    <constraint firstItem="bNu-L0-IhI" firstAttribute="leading" secondItem="Fgp-wx-hRP" secondAttribute="trailing" constant="9" id="P3H-FC-wic"/>
+                                    <constraint firstItem="EEo-9H-Xwh" firstAttribute="leading" secondItem="Fgp-wx-hRP" secondAttribute="trailing" constant="8" symbolic="YES" id="b0H-Xg-UyZ"/>
+                                    <constraint firstItem="bNu-L0-IhI" firstAttribute="leading" secondItem="rzU-gf-Eb9" secondAttribute="leading" constant="128" id="dRP-au-gps"/>
+                                    <constraint firstItem="Fgp-wx-hRP" firstAttribute="centerY" secondItem="rzU-gf-Eb9" secondAttribute="centerY" id="huX-KS-VcX"/>
+                                    <constraint firstAttribute="trailing" secondItem="EEo-9H-Xwh" secondAttribute="trailing" constant="8" id="sg4-Ki-ieA"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="withShimmer" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="withShimmer" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gmO-Iy-EXf">
@@ -190,20 +189,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C2H-k6-1YR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C2H-k6-1YR">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="shimmerCell" rowHeight="114" id="JNh-Qk-55E">
                                         <rect key="frame" x="0.0" y="28" width="414" height="114"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JNh-Qk-55E" id="Mbi-Yr-Rxd">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JNh-Qk-55E" id="Mbi-Yr-Rxd">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="113.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Js4-xh-VA6">
-                                                    <rect key="frame" x="106" y="11" width="288" height="92"/>
+                                                    <rect key="frame" x="100" y="11" width="294" height="90"/>
                                                     <color key="backgroundColor" red="0.1019607843" green="0.63529411759999999" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="90" id="GZA-91-NQB"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -211,12 +213,12 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="withShimmer" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CqD-OZ-Idn">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CqD-OZ-Idn">
                                                     <rect key="frame" x="20" y="22" width="70" height="70"/>
                                                     <color key="backgroundColor" red="0.0" green="1" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="6hV-ca-1e3"/>
-                                                        <constraint firstAttribute="height" constant="70" id="iGE-hi-XuE"/>
+                                                        <constraint firstAttribute="width" constant="70" id="wc7-Zw-JIx"/>
+                                                        <constraint firstAttribute="height" constant="70" id="y9S-MS-S1G"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -227,10 +229,11 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="CqD-OZ-Idn" firstAttribute="leading" secondItem="Mbi-Yr-Rxd" secondAttribute="leadingMargin" id="5XV-jo-zLw"/>
-                                                <constraint firstItem="Js4-xh-VA6" firstAttribute="leading" secondItem="CqD-OZ-Idn" secondAttribute="trailing" constant="16" id="6zp-cN-FUR"/>
+                                                <constraint firstItem="CqD-OZ-Idn" firstAttribute="centerY" secondItem="Mbi-Yr-Rxd" secondAttribute="centerY" id="0UP-LK-PqK"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Js4-xh-VA6" secondAttribute="trailing" id="8bO-Lm-30g"/>
-                                                <constraint firstItem="CqD-OZ-Idn" firstAttribute="centerY" secondItem="Mbi-Yr-Rxd" secondAttribute="centerY" id="N49-9b-28g"/>
+                                                <constraint firstItem="Js4-xh-VA6" firstAttribute="leading" secondItem="CqD-OZ-Idn" secondAttribute="trailing" constant="10" id="9A3-Mh-nnK"/>
+                                                <constraint firstItem="Js4-xh-VA6" firstAttribute="centerY" secondItem="Mbi-Yr-Rxd" secondAttribute="centerY" id="NDM-QB-tI7"/>
+                                                <constraint firstItem="CqD-OZ-Idn" firstAttribute="leading" secondItem="Mbi-Yr-Rxd" secondAttribute="leadingMargin" id="Pj5-Zk-GWv"/>
                                                 <constraint firstItem="Js4-xh-VA6" firstAttribute="top" secondItem="Mbi-Yr-Rxd" secondAttribute="topMargin" id="W2a-JD-jFp"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Js4-xh-VA6" secondAttribute="bottom" id="wnC-WB-d8K"/>
                                             </constraints>
@@ -262,7 +265,6 @@
         <!--Collection View Controller-->
         <scene sceneID="G6h-Yn-OBI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aJQ-cF-vtK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="nvO-fS-Civ" customClass="CollectionViewController" customModule="ShimmerView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hke-pN-Ve3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -273,19 +275,19 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tfJ-og-2vJ">
                                     <size key="itemSize" width="100" height="100"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="10" height="10"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionShimmerCell" id="zb4-3o-LZF">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <rect key="frame" x="0.0" y="10" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img" translatesAutoresizingMaskIntoConstraints="NO" id="caq-z8-haL">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img" translatesAutoresizingMaskIntoConstraints="NO" id="caq-z8-haL">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="withShimmer" value="YES"/>
@@ -303,6 +305,10 @@
                                         <size key="customSize" width="100" height="100"/>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QYf-Ql-Dry">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="10"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -318,6 +324,7 @@
                         <outlet property="collectionView" destination="hCu-Co-M6j" id="aPy-13-HQl"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aJQ-cF-vtK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="805.58035714285711"/>
         </scene>

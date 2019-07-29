@@ -15,36 +15,20 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        startShimmerAnimation()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        getLinesArrayFromLabel(label: label)
-        startShimmerAnimation()
     }
 
     @IBAction func onOff() {
         if on {
            on = false
-           stopShimmerAnimation(animated: false)
+           stopShimmerAnimation()
         } else {
            on = true
            startShimmerAnimation()
-        }
-    }
-
-    func getLinesArrayFromLabel(label: UILabel) {
-        if let font = label.font {
-            var unichars = [UniChar]("P".utf16)
-            var glyphs = [CGGlyph](repeating: 0, count: unichars.count)
-            let gotGlyphs = CTFontGetGlyphsForCharacters(label.font, &unichars, &glyphs, unichars.count)
-            if gotGlyphs {
-                let cgpath = CTFontCreatePathForGlyph(font, glyphs[0], nil)!
-              //  var inverse = CGAffineTransform(scaleX: 1, y: -1).translatedBy(x: 0, y: -cgpath.boundingBox.height - 1)
-                var transform = CGAffineTransform(scaleX: 1, y: 1).translatedBy(x: 0, y: 0)
-                let path = UIBezierPath(cgPath: cgpath.copy(using: &transform)!)
-                print(path)
-            }
         }
     }
 }
