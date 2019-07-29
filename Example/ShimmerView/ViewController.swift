@@ -12,9 +12,16 @@ class ViewController: UIViewController {
 
     @IBOutlet var label: UILabel!
     var on = true
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        ShimmerOptions.instance.backgroundColor = UIColor.red
+        ShimmerOptions.instance.gradientColor = UIColor.green
+        ShimmerOptions.instance.animationType = .fade
         startShimmerAnimation()
     }
 
@@ -24,11 +31,11 @@ class ViewController: UIViewController {
 
     @IBAction func onOff() {
         if on {
-           on = false
            stopShimmerAnimation()
         } else {
-           on = true
            startShimmerAnimation()
         }
+        
+        on = !on
     }
 }

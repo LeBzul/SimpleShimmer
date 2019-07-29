@@ -57,14 +57,20 @@ extension UIView {
     private func addShimmerView(_ view: UIView) {
         let rectShimmer = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         let shimmerView = UIView.init(frame: rectShimmer)
-        shimmerView.backgroundColor = ShimmerOptions.instance.gradientColor.withAlphaComponent(0.6)
+        
+        let shimmerColor = (ShimmerOptions.instance.animationType == .classic) ? ShimmerOptions.instance.gradientColor : ShimmerOptions.instance.backgroundColor
+        
+        shimmerView.backgroundColor = shimmerColor
         shimmerView.tag = UIView.shimmer_tag
         ShimmerAnimation.buildAnimation(view: shimmerView, type: ShimmerOptions.instance.animationType)
 
         let rectBackground = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         let shimmerViewBackground = UIView.init(frame: rectBackground)
         shimmerViewBackground.layer.cornerRadius = view.layer.cornerRadius
-        shimmerViewBackground.backgroundColor = ShimmerOptions.instance.backgroundColor
+        
+        let backgroundShimmer = (ShimmerOptions.instance.animationType == .classic) ? ShimmerOptions.instance.backgroundColor : UIColor.white
+        
+        shimmerViewBackground.backgroundColor = backgroundShimmer
         shimmerViewBackground.tag = UIView.shimmer_tag
         shimmerViewBackground.layer.borderWidth = ShimmerOptions.instance.borderWidth
         shimmerViewBackground.layer.borderColor = ShimmerOptions.instance.borderColor.cgColor

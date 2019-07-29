@@ -24,7 +24,6 @@ public class ShimmerOptions {
     }
     
     // Animation option
-    var gradientColor = UIColor.gray
     var animationDuration: CGFloat = 1.0
     var animationDelay: CGFloat = 0.3
     var animationAutoReserse = true
@@ -32,6 +31,7 @@ public class ShimmerOptions {
     var animationType: AnimationType = .classic
     
     // Shimmer background option
+    var gradientColor = UIColor.gray
     var borderWidth: CGFloat = 0.0
     var borderColor = UIColor.gray
     var backgroundColor = UIColor.white

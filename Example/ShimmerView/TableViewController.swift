@@ -28,7 +28,7 @@ class TableViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-       
+      
         self.tableView.startShimmerAnimation(withIdentifier: "shimmerCell", numberOfRows: 2, numberOfSections: 5)
         DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
             self.numberOfRowsInSection = 2
